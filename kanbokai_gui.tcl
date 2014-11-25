@@ -12,19 +12,21 @@
 # ここは実際のパスに書き換えてください
 set exec_file "C:/Program Files/ZWO Design/ASI120MC Camera/USB CAMERA.exe"
 
-# ここはこのままでお使いください
-set nircmd_file "nircmd/nircmd.exe"
-
 # フォント選択
 option add *font {{ＭＳ ゴシック} 20}
 
-# ボタンのへこむ時間
-set bt_wait 50000
+# ここはこのままでお使いください
+set nircmd_file "nircmd/nircmd.exe"
 
 
 #
 # nircmd の引数
 #
+
+# AMCap ウィンドウの位置，サイズ
+set arg_fixsize "win setsize title AMCap 280 0 950 785"
+# ボタンがへこんでいる時間
+set arg_button_wait "wait 500"
 
 set arg_activate "win activate title AMCap"
 set arg_focus "win focus title AMCap"
@@ -63,10 +65,8 @@ set arg_gain90_2 "sendkeypress pageup pagedown"
 set arg_gain80 "sendkeypress end pageup left pagedown pageup"
 set arg_goto_dark_0 "sendkeypress ctrl+tab ctrl+tab"
 set arg_goto_dark_1 "sendkeypress shift+tab shift+tab shift+tab shift+tab shift+tab shift+tab spc"
-set arg_fixsize "win setsize title AMCap 280 0 950 785"
 set arg_preview_0 "sendkeypress esc alt+o p"
 set arg_preview_1 "sendkeypress n"
-set arg_button_wait "wait 500"
 
 
 #
